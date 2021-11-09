@@ -7,12 +7,12 @@ import javax.validation.constraints.NotEmpty;
 /** Form data object from the borrow view. */
 public class BookBorrowFormData {
 
-  @NotEmpty(message = "{empty.borrowCmd.isbn}")
-  @ISBN(message = "{notvalid.borrowCmd.isbn}")
+  @NotEmpty(message = "{notvalid.validate.isbn}")
+  @ISBN(message = "{notvalid.validate.isbn}")
   private String isbn;
 
-  @NotEmpty(message = "{empty.borrowCmd.email}")
-  @Email(message = "{notvalid.borrowCmd.email}")
+  @NotEmpty(message = "{notvalid.validate.email}")
+  @Email(message = "{notvalid.validate.email}")
   private String email;
 
   public String getIsbn() {

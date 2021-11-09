@@ -11,7 +11,7 @@ public class HtmlBook {
   private String description;
 
   public HtmlBook() {
-    title = author = isbn = yearOfPublication = borrower = "";
+    title = author = isbn = yearOfPublication = borrower = description = "";
     edition = 0;
   }
 

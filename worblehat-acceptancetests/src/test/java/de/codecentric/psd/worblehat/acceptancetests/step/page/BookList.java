@@ -42,6 +42,23 @@ public class BookList {
     assertThat(isbn, is(htmlBook.getIsbn()));
   }
 
+  @Then("the booklist contains a book with {string}, {string}, {string}, {int} and {string}")
+  public void myBooksContainsRowWithValues(
+      final String title,
+      final String author,
+      final String year,
+      final Integer edition,
+      final String isbn) {
+    seleniumAdapter.gotoPage(Page.MYBOOKS);
+    HtmlBookList htmlBookList = seleniumAdapter.getTableContent(PageElement.MYBOOKS);
+    HtmlBook htmlBook = htmlBookList.getBookByIsbn(isbn);
+    assertThat(title, is(htmlBook.getTitle()));
+    assertThat(author, is(htmlBook.getAuthor()));
+    assertThat(year, is(htmlBook.getYearOfPublication()));
+    assertThat(edition, is(htmlBook.getEdition()));
+    assertThat(isbn, is(htmlBook.getIsbn()));
+  }
+
   @Then("the booklist shows that book with {string} as {string}")
   public void bookIsListedWithSpecificProperty(String property, String value) {
     seleniumAdapter.gotoPage(Page.BOOKLIST);

@@ -3,6 +3,8 @@ package de.codecentric.psd.worblehat.domain;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
+
 import javax.annotation.Nonnull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -56,6 +58,18 @@ public class StandardBookService implements BookService {
   @Override
   public List<Book> findAllBooks() {
     return bookRepository.findAllByOrderByTitle();
+  }
+
+  @Override
+  public List<Book> findAllBooksByBorrower(String borrower) {
+    List<Book> books = bookRepository.findAllByOrderByTitle();
+    List<Book> borrowedBooks =
+        books.stream().filter(book -> {
+          Borrowing borrowing = book.getBorrowing();
+          boolean temp = borrowing != null ? borrowing.getBorrowerEmailAddress().equals(borrower) : false;
+          return temp;
+        }).collect(Collectors.toList())  ;
+    return borrowedBooks;
   }
 
   @Override

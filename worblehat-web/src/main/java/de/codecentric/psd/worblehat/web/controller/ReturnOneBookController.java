@@ -1,9 +1,7 @@
 package de.codecentric.psd.worblehat.web.controller;
 
 import de.codecentric.psd.worblehat.domain.BookService;
-import de.codecentric.psd.worblehat.web.formdata.ReturnAllBooksFormData;
 import de.codecentric.psd.worblehat.web.formdata.ReturnOneBookFormData;
-
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,12 +28,12 @@ public class ReturnOneBookController {
 
   @PostMapping
   public String returnAllBooks(
-    @ModelAttribute("returnOneBookFormData") @Valid ReturnOneBookFormData formData,
-    BindingResult result) {
+      @ModelAttribute("returnOneBookFormData") @Valid ReturnOneBookFormData formData,
+      BindingResult result) {
     if (result.hasErrors()) {
       return "returnAllBooks";
     } else {
-      bookService.returnOneBookByBorrower(formData.getEmailAddress(),formData.getIsbn());
+      bookService.returnOneBookByBorrower(formData.getEmailAddress(), formData.getIsbn());
       return "home";
     }
   }

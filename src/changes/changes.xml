@@ -29,6 +29,8 @@
 			description="Release with new functionality">
 			<action dev="betaworblers" type="update">
 				- Added more and better error messages.
+				- Added functionalityfor returning one books.
+				- updated Spring Boot to the latest version.
 			</action>
 		</release>
 	</body>

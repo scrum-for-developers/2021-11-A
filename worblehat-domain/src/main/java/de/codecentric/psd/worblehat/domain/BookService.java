@@ -20,6 +20,8 @@ public interface BookService {
 
   void returnAllBooksByBorrower(String string);
 
+  void returnOneBookByBorrower(String email,String isbn);
+
   List<Book> findAllBooks();
 
   Set<Book> findBooksByIsbn(String isbn);

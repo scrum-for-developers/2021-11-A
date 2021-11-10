@@ -69,7 +69,16 @@ public class BookDataFormData {
 
   @Override
   public String toString() {
-    return "BookDataFormData [title=" + title + ", edition=" + edition + ", yearOfPublication=" + yearOfPublication
-        + ", isbn=" + isbn + ", author=" + author + "]";
+    return "BookDataFormData [title="
+        + title
+        + ", edition="
+        + edition
+        + ", yearOfPublication="
+        + yearOfPublication
+        + ", isbn="
+        + isbn
+        + ", author="
+        + author
+        + "]";
   }
 }

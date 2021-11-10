@@ -29,9 +29,17 @@
 			description="Release with new functionality">
 			<action dev="betaworblers" type="update">
 				- Added more and better error messages.
-				- Added functionalityfor returning one books.
+				- Added functionality for returning one books.
 				- updated Spring Boot to the latest version.
 			</action>
 		</release>
+
+    <release version="1.3.0" date="2021-11-10"
+             description="Release with new functionality">
+      <action dev="betaworblers" type="update">
+        Accept also 13 digit ISBNS.
+      </action>
+    </release>
+
 	</body>
 </document>
